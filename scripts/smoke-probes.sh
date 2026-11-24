@@ -3,6 +3,8 @@
 # 用户数据就是数据卷里的世界和配置（/data）。服务端没有能从外面写数据的接口（游戏协议要完整客户端，
 # 控制台要终端），所以数据探针把随机标记写进服务器容器挂载的 /data：升级、重装后标记还在，
 # 就证明世界目录随数据卷保住了（容器里 exec 写的文件和服务端写世界用的是同一个挂载）。
+# 同意 EULA 才能启动；清单里 eula 是必填、没有默认值，装的时候由冒烟给上。
+export SMOKE_SETTINGS=(eula=true)
 
 _container() { # 本实例里 minecraft 服务的容器：按核心打的标签找，实例名没导出时按 SMOKE_BASE 推
   local inst="${SMOKE_INSTANCE:-}" args=(--filter "label=wonton.plugin=$SMOKE_PLUGIN_ID" --filter "label=wonton.service=minecraft")
