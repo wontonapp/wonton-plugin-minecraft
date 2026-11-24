@@ -3,7 +3,7 @@
 # 专有软件，首次启动由镜像按 Minecraft EULA 下载，所以必须先由主人同意 EULA（settings 的 eula）。
 services:
   minecraft:
-    image: ghcr.io/itzg/minecraft-server:2026.11.0@sha256:8d5080d8dcd0a2629c2e4f248678373a337a40537ad6ef2857c7dbcda6e3eadd
+    image: ghcr.io/itzg/minecraft-server:2026.11.1@sha256:0634ff76eee896c7e9760a35117d24fad394857d10bc8c1d9bc7f7ff7deef3c2
     # 镜像能以任意 uid 运行（入口检测到非 root 就跳过内部的用户切换），数据目录由核心按这个属主交给容器。
     user: "${PUID}:${PGID}"
     environment:
