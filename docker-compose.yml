@@ -51,11 +51,12 @@ services:
     stop_grace_period: 75s
 
 x-wonton:
-  spec: "0.12"
+  spec: "0.17"
   id: app.github.itzg.minecraft
-  version: 0.1.0
+  version: 0.1.1
   kind: app
-  title: { zh: Minecraft 服务器（Java 版）, en: Minecraft Server (Java Edition) }
+  title: { en: "Minecraft" }
+  subtitle: { zh: "Java 版服务器", en: "Java Edition Server" }
   description:
     zh: 把《我的世界》Java 版开成家里的服务器，家人和朋友连上来一起玩。
     en: Host a Minecraft Java Edition world at home for family and friends to join.
@@ -81,9 +82,7 @@ x-wonton:
       You must accept the Minecraft EULA at install time — the server program is Mojang proprietary software and is downloaded automatically on first start. Online-mode (premium account) verification is on by default; optionally enable a whitelist so only listed players can join.
 
       Devices on the LAN connect to the server's LAN address on port 25565; friends outside connect over the Wonton tunnel on the same port. Common options (server type, version, difficulty, game mode, player limit, memory) live in the plugin's settings.
-  release_notes:
-    zh: 首个版本：基于 itzg 的 docker-minecraft-server 镜像（2026.11.0，Java 25），原版（Vanilla）和 Paper 可选。
-    en: "First release: based on itzg's docker-minecraft-server image (2026.11.0, Java 25), Vanilla or Paper."
+  release_notes: { zh: "应用名改回原名 Minecraft，用途“Java 版服务器”放到名字下面。", en: "The app now shows its own name, Minecraft, with \"Java Edition Server\" underneath." }
   # 没有网页：这是一台游戏服务器，游戏客户端直连 25565。
   lan:
     ports:
